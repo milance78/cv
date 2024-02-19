@@ -1,0 +1,30 @@
+.box {
+    height: 300%;
+    width: calc(100% - 250px);
+    margin-left: auto;
+    padding: 40px 30px;
+    transition: .4s ease;
+    h1 {
+        color: var(--accents);
+        font-weight: 700;
+        font-size: 25px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 40px;
+    }
+}
+
+.box-spread {
+    width: calc(100%);
+}
+
+@media (max-width: 700px) {
+    .box {
+        width: calc(100% - 54px); ;
+    }
+    .box-spread {
+        width: calc(100%);
+    }
+}
