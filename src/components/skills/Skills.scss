@@ -1,0 +1,35 @@
+.skills {
+    .skills-container {
+
+        div {
+            color: white;
+            background-color: var(--accents);
+            margin-bottom: 5px;
+            padding: 5px 20px;
+        }
+
+    }
+    .ruler {
+        margin-top: 20px;  
+        .marks {
+            display: flex;
+            justify-content: space-between;
+            .mark {
+                height: 10px;
+                width: 1px;
+                background: #667081;
+            }
+        }
+        .line {
+            height: 1px;
+            width: 100%;
+            background: #667081;
+        }
+        .skillLevels {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            color: #667081;
+        }
+    }
+}

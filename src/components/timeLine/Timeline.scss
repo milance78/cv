@@ -1,3 +1,61 @@
 .timeline {
-    padding: 30px;
+    margin-top: 60px;
+    h1 {
+        margin-bottom: 60px;
+    }
+    .timeline-container {
+        min-height: 30vh;
+        max-height: 80vh;
+        overflow: scroll;
+
+        article {
+            display: flex;
+
+            section.left {
+                width: 37px;
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h3 {
+                    margin-top: 13px;
+                    height: 40px;
+                }
+
+                .vertical-line {
+                    height: calc(100% - 40px);
+                    width: 5px;
+                    background: var(--accents);
+                }
+            }
+
+            section.right {
+                width: calc(100% - 106px);
+                margin-bottom: 15px;
+                margin-left: auto;
+                position: relative;
+
+                .triangle {
+
+                    width: 0;
+                    height: 0;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-right: 15px solid #EEEEEE;
+
+                    position: absolute;
+                    top: 16px;
+                    left: -10px;
+                }
+
+                h3 {
+                    padding: 13px 0 0 13px;
+                    font-weight: 700;
+                    font-size: 16px;
+                    background: #EEEEEE;
+                }
+            }
+        }
+    }
 }

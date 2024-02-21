@@ -3,9 +3,7 @@ import './Info.scss';
 
 const Info: React.FC<{description: string}>= ({description}) => {
   return (
-    <div>
-      {description}
-    </div>
+    <div className='info'>{description}</div>
   )
 }
 

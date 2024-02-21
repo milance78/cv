@@ -1,16 +1,27 @@
 import React from 'react';
 import './Timeline.scss';
-import { education } from '../../data/data';
+import { educationData } from '../../data/data';
 import Info from '../info/Info';
 
 const TimeLine = () => {
   return (
-    <div className='timeline'>
-        {education.map((el, i)=> <article key={i}>
-        <h3>{el.title}</h3>
-        <Info description={el.description}/>
+    <section className='timeline'>
+      <h1>Education</h1>
+      <div className="timeline-container">
+        {educationData.map((el, i) => <article key={i}>
+          <section className='left'>
+            <h3>{el.date}</h3>
+            <div className='vertical-line'></div>
+          </section>
+          <section className='right'>
+            <div className="triangle"></div>
+            <h3>{el.title}</h3>
+            <Info description={el.text} />
+          </section>
         </article>)}
-    </div>
+      </div>
+
+    </section>
   )
 }
 
