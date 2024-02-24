@@ -1,0 +1,45 @@
+.add-skills {
+    border: solid 1px var(--accents);
+    border-radius: 5px;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+
+    .skill-name,
+    .skill-range {
+
+        label {
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        input {
+            width: 270px;
+            height: 40px;
+            border: 1px solid #667081;
+            border-radius: 5px;
+            font-size: 12px;
+            padding-left: 10px;
+            outline-color: var(--accents);
+        }
+    }
+
+    .error {
+        margin-left: 82px;
+        height: 25px;
+        color: coral;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+    
+}
+
+@media (max-width: 750px) {
+    .add-skills {
+        .error {
+            margin-left: 0;
+        }
+    }
+}

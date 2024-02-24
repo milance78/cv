@@ -1,10 +1,22 @@
-import React, { ReactNode } from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 import './Button.scss';
 
-const Button: React.FC<{ title: string | ReactNode}> = ({ title }) => {
+const Button: React.FC<{
+  title: string | ReactNode,
+  clickHandler?: MouseEventHandler,
+  isDisabled?: boolean
+}> = ({ title, clickHandler, isDisabled }) => {
 
   return (
-    <button>{title}</button>
+    <button
+      className={isDisabled
+        ? 'button button-disabled'
+        : 'button'}
+      onClick={clickHandler}
+      disabled={isDisabled}>
+      {title}
+    </button>
+
   );
 }
 

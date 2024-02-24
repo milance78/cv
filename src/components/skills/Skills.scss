@@ -1,4 +1,18 @@
 .skills {
+    position: relative;
+    >button{ 
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        p {
+            font-size: 16px;
+        }   
+    }
+    .icon {
+        border-bottom: solid 1px;
+        width: 9px;
+    }
     .skills-container {
 
         div {
@@ -6,6 +20,10 @@
             background-color: var(--accents);
             margin-bottom: 5px;
             padding: 5px 20px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            
         }
 
     }
