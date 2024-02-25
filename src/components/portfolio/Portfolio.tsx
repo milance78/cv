@@ -19,8 +19,9 @@ const Portfolio = () => {
     }, []);
 
     useEffect(() => {
-        if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
-        else isotope.current?.arrange({ filter: `.${filterKey}` });
+        filterKey === "*"
+        ? isotope.current?.arrange({ filter: `*` })
+        : isotope.current?.arrange({ filter: `.${filterKey}` });
     }, [filterKey]);
 
     const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
@@ -29,22 +30,19 @@ const Portfolio = () => {
         <div className='portfolio'>
             <h1>Portfolio</h1>
             <nav>
-                <h5
-                    onClick={handleFilterKeyChange("*")}
-                >All</h5>
+                <h5 onClick={handleFilterKeyChange("*")}>
+                    All
+                </h5>
                 <p>/</p>
-                <h5
-                    onClick={handleFilterKeyChange("Ui")}
-                >Ui</h5>
+                <h5 onClick={handleFilterKeyChange("Ui")}>
+                    Ui
+                </h5>
                 <p>/</p>
-                <h5
-                    onClick={handleFilterKeyChange("Code")}
-                >Code</h5>
+                <h5 onClick={handleFilterKeyChange("Code")}>
+                    Code
+                </h5>
             </nav>
-            <section
-                className="filter-container"
-                style={{ display: 'flex' }}
-            >
+            <section className="filter-container flex">
                 {
                     portfolioData.map((el, i) =>
                         <PortfolioItem
