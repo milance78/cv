@@ -1,20 +1,27 @@
-import commentator1 from '../assets/img/Ellipse 1.png';
 
-interface Education {
+import card1 from '../assets/img/card_1.png'
+import card2 from '../assets/img/card_2.png'
+import commentator1 from '../assets/img/commentator_1.png'
+
+
+export interface Education {
     date: string;
     title: string;
     text: string;
 }
 
-interface Feedbacks {
+export interface Feedbacks {
     text: string,
     img: string,
 }
 
-interface Skill {
-    skillName: string;
-    skillRange: number;
+export interface Element {
+    photo: string;
+    title: string;
+    text: string;
 }
+
+
 
 export const aboutMeInfo: string = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque'
 
@@ -103,37 +110,41 @@ export const expertiseData = [
 export const feedbacks: Feedbacks[] = [
     {
         text: 'Nam lacus nulla, egestas sed rhoncus vel, iaculis eget ante. Sed venenatis velit lacinia, tincidunt tortor nec, vulputate risus. Sed lobortis nibh sapien, ut pretium justo egestas eu. Nullam at tellus eget dolor efficitur egestas et non nisi. Fusce varius mi non sapien ullamcorper tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean sed mi mi. <br />Aenean interdum augue non tempus euismod. Morbi id eros non lectus commodo rutrum. Duis pellentesque eros in tortor tincidunt auctor. Mauris ut ipsum ligula. Duis nec condimentum turpis. Proin aliquet nisi sit amet tempus pharetra.',
-        img: commentator1,
+        img: '../assets/img/Ellipse 1.png',
     },
     {
         text: 'Aliquam pulvinar dignissim risus, quis suscipit velit malesuada feugiat. Donec lobortis urna eget posuere ornare. Suspendisse lacinia est a ligula finibus, a dictum risus mollis. Mauris consectetur est vitae est malesuada, et tristique ex lobortis. Donec maximus orci at justo auctor, sit amet elementum tortor interdum. Nam non luctus eros. Vivamus auctor libero quis ligula elementum, vel gravida metus ultricies. Aliquam viverra vel enim vitae ultrices. Morbi sollicitudin risus auctor turpis tincidunt, vel volutpat erat feugiat. In vulputate a mi sed ullamcorper.',
-        img: commentator1,
+        img: '../assets/img/Ellipse 1.png',
     },
     {
         text: 'Maecenas dignissim luctus mauris id cursus. Suspendisse potenti. Sed laoreet volutpat enim nec ultrices. Phasellus pulvinar tempus nulla, vel venenatis risus varius vitae. Nam finibus nisi a felis bibendum pretium. Nulla facilisi. Nullam nec fringilla leo, rutrum dictum massa. Praesent purus urna, tempor non mattis mattis, pulvinar eget nisi.<br />Phasellus posuere congue auctor. Sed odio ligula, consectetur sed enim eu, aliquam tempus orci. Aenean in pretium sapien. Cras ut nisi a ex lacinia vestibulum. Cras non varius dolor.',
-        img: commentator1,
+        img: '../assets/img/Ellipse 1.png',
     }
 ]
 
-export const skillsData: Skill[] = [
+export const portfolioData = [
     {
-        skillName: 'React',
-        skillRange: 100,
+        photo: card1,
+        type: 'Ui',
+        title: 'Some text',
+        text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis '
     },
-    { 
-        skillName: 'JavaScript',
-        skillRange: 80 
+    {
+        photo: card2,
+        type: 'Code',
+        title: 'Some text',
+        text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis '
     },
-    { 
-        skillName: 'HTML',
-        skillRange: 50
-     },
-    { 
-        skillName: 'CSS',
-        skillRange: 40 
+    {
+        photo: card1,
+        type: 'Ui',
+        title: 'Some text',
+        text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis '
     },
-    { 
-        skillName: 'Redux',
-        skillRange: 20 
-    },
-] 
+    {
+        photo: card2,
+        type: 'Code',
+        title: 'Some text',
+        text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis '
+    }
+]

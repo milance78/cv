@@ -5,6 +5,7 @@ import { aboutMeInfo } from '../../data/data';
 import TimeLine from '../timeLine/TimeLine';
 import Expertise from '../expertise/Expertise';
 import Skills from '../skills/Skills';
+import Portfolio from '../portfolio/Portfolio';
 
 interface IProps {
   panelVisibility: PanelVisibility
@@ -18,6 +19,7 @@ const Box: React.FC<IProps> = ({panelVisibility}) => {
       <TimeLine />
       <Expertise />
       <Skills />
+      <Portfolio />
     </div>
   )
 }
