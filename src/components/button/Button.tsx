@@ -1,11 +1,14 @@
 import React, { MouseEventHandler, ReactNode } from 'react';
 import './Button.scss';
 
-const Button: React.FC<{
-  title: string | ReactNode,
-  clickHandler?: MouseEventHandler,
-  isDisabled?: boolean
-}> = ({ title, clickHandler, isDisabled }) => {
+interface IButton {
+  title: string | ReactNode;
+  clickHandler?: MouseEventHandler;
+  isDisabled?: boolean;
+  styling?: Object
+}
+
+const Button: React.FC<IButton> = ({ title, clickHandler, isDisabled, styling }) => {
 
   return (
     <button
@@ -13,7 +16,8 @@ const Button: React.FC<{
         ? 'button button-disabled'
         : 'button'}
       onClick={clickHandler}
-      disabled={isDisabled}>
+      disabled={isDisabled}
+      style={styling}>
       {title}
     </button>
 
