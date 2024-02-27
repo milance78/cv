@@ -16,7 +16,7 @@ const Skills = () => {
     const [isDisplayed, setIsDisplayed] = useState(false);
 
     return (
-        <div className='skills'>
+        <div className='skills' id='section-4'>
             <h1>Skills</h1>
             <Button
                 title={

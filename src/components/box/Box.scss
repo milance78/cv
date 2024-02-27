@@ -1,9 +1,9 @@
 .box {
-    height: 300%;
     width: calc(100% - 250px);
     margin-left: auto;
     padding: 50px 30px;
     transition: .4s ease;
+    height: fit-content;
     h1 {
         color: var(--accents);
         font-weight: 700;

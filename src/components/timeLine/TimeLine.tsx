@@ -5,7 +5,7 @@ import Info from '../info/Info';
 
 const TimeLine = () => {
   return (
-    <section className='timeline'>
+    <section className='timeline' id='section-2'>
       <h1>Education</h1>
       <div className="timeline-container">
         {educationData.map((el, i) => <article key={i}>

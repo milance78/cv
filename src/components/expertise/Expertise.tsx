@@ -4,7 +4,7 @@ import { expertiseData } from '../../data/data'
 
 const Expertise = () => {
     return (
-        <section className='expertise'>
+        <section className='expertise' id='section-3'>
             <h1>Experience</h1>
             <div className="expertise-container">
                 {expertiseData.map(

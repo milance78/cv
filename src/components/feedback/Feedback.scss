@@ -1,0 +1,16 @@
+.feedback-container{
+    .feedback-item{
+        margin-top: 30px;
+        .person-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            img {
+                margin-right: 20px;
+            }
+            .website {
+                color: var(--accents);
+            }
+        }
+    }
+}

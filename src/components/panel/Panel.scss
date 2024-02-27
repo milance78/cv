@@ -6,10 +6,10 @@
     position: fixed;
     transition: .4s ease;
     width: 250px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     color: white;
 
     .hamburger {
@@ -38,7 +38,6 @@
         font-size: 16px;
         line-height: 19.2px;
         margin-top: 15px;
-        margin-bottom: auto;
     }
 }
 

@@ -27,7 +27,7 @@ const Portfolio = () => {
     const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
 
     return (
-        <div className='portfolio'>
+        <div className='portfolio' id='section-5'>
             <h1>Portfolio</h1>
             <nav>
                 <h5 onClick={handleFilterKeyChange("*")}>
@@ -42,7 +42,7 @@ const Portfolio = () => {
                     Code
                 </h5>
             </nav>
-            <section className="filter-container flex">
+            <section className="filter-container">
                 {
                     portfolioData.map((el, i) =>
                         <PortfolioItem
@@ -51,7 +51,6 @@ const Portfolio = () => {
                             type={el.type} />)
                 }
             </section>
-
         </div>
     )
 }
