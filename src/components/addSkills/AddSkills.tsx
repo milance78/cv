@@ -2,19 +2,10 @@ import React, { useState, useEffect } from 'react'
 import './AddSkills.scss'
 import Button from '../button/Button'
 import { Skill } from '../skills/Skills';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addSkill } from '../../redux/features/skillsSlice';
-import { log } from 'console';
-
-
-// interface Error {
-//     nameError: string;
-//     rangeError: string;
-// }
 
 const AddSkills: React.FC = () => {
-
-    const skillsArray: Skill[] = useSelector((state: any) => state.skills.skillsArray);
 
     const dispatch = useDispatch();
 
@@ -41,8 +32,6 @@ const AddSkills: React.FC = () => {
                 skillName: ev.target.value
             }
         );
-
-
     };
 
     const rangeChangeHandler = (ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,7 +57,7 @@ const AddSkills: React.FC = () => {
             && setRangeError(errors.rangeOver100);
         skill.skillRange && Number(skill.skillRange) < 10
             && setRangeError(errors.rangeUnder10);
-    }, [skill])
+    }, [errorIsDisplayed, errors.nameEmpty, errors.rangeEmpty, errors.rangeNaN, errors.rangeOver100, errors.rangeUnder10, skill])
 
     useEffect(()=>{       
         Boolean(nameError) 
@@ -78,7 +67,7 @@ const AddSkills: React.FC = () => {
         ? setIsDisabled(true)
         : setIsDisabled(false)
 
-    }, [rangeError, nameError])
+    }, [rangeError, nameError, skill.skillName, skill.skillRange])
 
     const submitHandler = (ev: React.FormEvent) => {
         ev.preventDefault();

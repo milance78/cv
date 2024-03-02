@@ -9,7 +9,7 @@ interface IButton {
 }
 
 const Button: React.FC<IButton> = ({ title, clickHandler, isDisabled, styling }) => {
-
+  
   return (
     <button
       className={isDisabled

@@ -13,7 +13,7 @@ import { faComment } from '@fortawesome/free-solid-svg-icons';
 const Navigation = () => {
   return (
     <div className='navigation'>
-      <a href="#section-1">
+      <a href='#section-1'>
         <FontAwesomeIcon icon={faUser} />
         <p>About me</p>
       </a>

@@ -1,27 +1,35 @@
 .contact-details {
     margin-bottom: 40px;
+
     ul {
+        .adress-link {
+            border: solid yellow;
+        }
+
         li {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
 
-            .icon {
-                color: var(--accents);
-                width: 28.38px;
-                height: 27.79px;
-                margin-right: 20px;
-            }
-
-            .contact-data {
-                h5 {
-                    font-size: 16px;
+            a {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                .icon {
+                    color: var(--accents);
+                    width: 28.38px;
+                    height: 27.79px;
+                    margin-right: 20px;
                 }
 
-                p {
-                    color: #667081;
-                }
+                .contact-data {
+                    h5 {
+                        font-size: 16px;
+                    }
 
+                    p {
+                        color: #667081;
+                    }
+
+                }
             }
         }
     }

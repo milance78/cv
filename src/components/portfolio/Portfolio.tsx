@@ -46,6 +46,7 @@ const Portfolio = () => {
                 {
                     portfolioData.map((el, i) =>
                         <PortfolioItem
+                            key={i}
                             element={el}
                             index={i}
                             type={el.type} />)

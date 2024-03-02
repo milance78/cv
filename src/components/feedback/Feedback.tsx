@@ -12,7 +12,9 @@ const Feedback = () => {
             <h1>Feedback</h1>
             <section className="feedback-container">
                 {feedbackData.map((el, i) =>
-                    <article className='feedback-item'>
+                    <article 
+                    className='feedback-item'
+                    key={i}>
                         <Info description={el.text} />
                         <div className="person-info">
                             <img src={el.img} alt={`person${i+1}`} />
