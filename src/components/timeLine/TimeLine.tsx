@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './Timeline.scss';
 import Info from '../info/Info';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,27 +7,14 @@ import '../../services/server'
 import { fetchEducationData } from '../../redux/features/educationSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 
-interface Article {
-  date: string,
-  title: string,
-  description: string;
-}
-
-
-
 const TimeLine = () => {
 
   const dispatch = useAppDispatch();
   const educationData = useAppSelector((state)=>state.education.educationArray)
-  // const [educationData, setEducationData] = useState<Article[]>([]);
 
   useEffect(() => {
-    // fetch('/api/education')
-    //   .then((res) => res.json())
-    //   .then((data) => setEducationData(data))
-    dispatch(fetchEducationData());
-
-  }, []);
+    dispatch(fetchEducationData());   
+  }, [dispatch]);
 
   return (
     <section className='timeline' id='section-2'>
@@ -54,9 +41,6 @@ const TimeLine = () => {
             margin: '10% auto',
             display: 'block',
           }} />}
-
-
-
     </section>
   )
 }

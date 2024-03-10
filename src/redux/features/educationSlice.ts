@@ -18,10 +18,8 @@ export const fetchEducationData = createAsyncThunk(
     'education/fetch',
     async (thunkAPI) => {
         try {
-            const response = await fetch('/api/education');
-            const data = response.json();
-            console.log({fetchedData: data});   
-            return data;
+            const response = await fetch('/api/education'); 
+            return response.json();
         } catch (error) {
             console.log(error);            
         }
@@ -39,9 +37,7 @@ export const educationSlice = createSlice({
         builder.addCase(
             fetchEducationData.fulfilled,
             (state, action) => {
-                state.educationArray = action.payload;
-                console.log(state.educationArray);
-                
+                state.educationArray = action.payload;             
             })
     }
 });
