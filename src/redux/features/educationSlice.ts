@@ -7,21 +7,23 @@ export interface Education {
     description: string;
 }
 interface EducationState {
-    educationArray: Education[]
+    educationArray: Education[];
+    status: string,
 }
 
 const initialState: EducationState = {
     educationArray: [],
+    status: 'fulfilled',
 }
 
 export const fetchEducationData = createAsyncThunk(
     'education/fetch',
     async (thunkAPI) => {
         try {
-            const response = await fetch('/api/education'); 
+            const response = await fetch('/api/education');
             return response.json();
         } catch (error) {
-            console.log(error);            
+            console.log(error);
         }
     });
 
@@ -34,11 +36,24 @@ export const educationSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(
-            fetchEducationData.fulfilled,
-            (state, action) => {
-                state.educationArray = action.payload;             
-            })
+        builder
+            .addCase(
+                fetchEducationData.pending,
+                (state) => {
+                    state.status = 'loading';
+                })
+            .addCase(
+                fetchEducationData.fulfilled,
+                (state, action) => {
+                    state.educationArray = action.payload;
+                    state.status = 'complete';
+                })
+            .addCase(
+                fetchEducationData.rejected,
+                (state) => {
+                    state.status = 'failed';
+                }
+            )
     }
 });
 
