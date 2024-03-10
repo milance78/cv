@@ -4,6 +4,8 @@ import Info from '../info/Info';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
 import '../../services/server'
+import { fetchEducationData } from '../../redux/features/educationSlice';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 interface Article {
   date: string,
@@ -15,13 +17,16 @@ interface Article {
 
 const TimeLine = () => {
 
-
-  const [educationData, setEducationData] = useState<Article[]>([]);
+  const dispatch = useAppDispatch();
+  const educationData = useAppSelector((state)=>state.education.educationArray)
+  // const [educationData, setEducationData] = useState<Article[]>([]);
 
   useEffect(() => {
-    fetch('/api/education')
-      .then((res) => res.json())
-      .then((data) => setEducationData(data))
+    // fetch('/api/education')
+    //   .then((res) => res.json())
+    //   .then((data) => setEducationData(data))
+    dispatch(fetchEducationData());
+
   }, []);
 
   return (
