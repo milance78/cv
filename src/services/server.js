@@ -65,6 +65,23 @@ createServer({
               description: 'Donec suscipit lorem rhoncus, eleifend tellus sed, tempus erat. Sed maximus, elit nec rhoncus egestas, urna eros scelerisque mauris, in tristique orci enim in sapien. Cras suscipit quam quis nisl posuere, maximus pulvinar dolor ultricies. Quisque ac enim lacinia, vestibulum diam vel, scelerisque felis. In malesuada varius sodales.',
           },
       ]
-      }, {timing: 4000})
+      }, {timing: 4000});
+      this.get("/api/skills", () => {
+        // hardcoded
+        return [
+            {
+                skillName: 'test1', 
+                skillRange: 90,
+            },
+            {
+                skillName: 'test2', 
+                skillRange: 60,
+            },
+        ]
+      }, {timing: 4000});
+      this.post("/api/skills", (schema, request) => {
+            let attrs = JSON.parse(request.requestBody);
+            console.log({attrs});
+      });
     }
   });

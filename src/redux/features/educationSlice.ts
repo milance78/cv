@@ -18,7 +18,7 @@ const initialState: EducationState = {
 
 export const fetchEducationData = createAsyncThunk(
     'education/fetch',
-    async (thunkAPI) => {
+    async () => {
         try {
             const response = await fetch('/api/education');
             return response.json();
@@ -30,11 +30,7 @@ export const fetchEducationData = createAsyncThunk(
 export const educationSlice = createSlice({
     name: 'education',
     initialState: initialState,
-    reducers: {
-        returnEducation: (state) => {
-            return state
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(
@@ -57,5 +53,4 @@ export const educationSlice = createSlice({
     }
 });
 
-export const { returnEducation } = educationSlice.actions;
 export default educationSlice.reducer;

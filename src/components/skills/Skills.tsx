@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Skills.scss';
 import AddSkills from '../addSkills/AddSkills';
-import { useSelector } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../redux/store';
+import { fetchSkillsData } from '../../redux/features/skillsSlice';
 import Button from '../button/Button';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRotate } from '@fortawesome/free-solid-svg-icons';
 
 export interface Skill {
     skillName: string,
@@ -12,8 +14,16 @@ export interface Skill {
 }
 
 const Skills = () => {
-    const skillsArray: Skill[] = useSelector((state: any) => state.skills.skillsArray);
+    const dispatch = useAppDispatch();
+    const skillsArray = useAppSelector((state) => state.skills.skillsArray);
+    const loadingStatus = useAppSelector((state) => state.skills.getStatus);
     const [isDisplayed, setIsDisplayed] = useState(false);
+
+    useEffect(() => {
+        dispatch(fetchSkillsData())
+        console.log('useEffect trigerred');
+
+    }, [dispatch])
 
     return (
         <div className='skills' id='section-4'>
@@ -41,13 +51,27 @@ const Skills = () => {
                 ? <AddSkills />
                 : null}
             <div className="skills-container">
-                {
-                    skillsArray.map(
+                {loadingStatus === 'complete'
+                    ? skillsArray.map(
                         (el, i) => <div
                             key={i}
                             style={{ width: `${el.skillRange}%` }}>
                             {el.skillName}
                         </div>)
+                    : loadingStatus === 'loading'
+                        ? <FontAwesomeIcon
+                            icon={faRotate} spin size='2xl'
+                            style={{
+                                color: 'var(--accents)',
+                                width: '50px',
+                                margin: '10% auto',
+                                display: 'block',
+                            }} />
+                        : loadingStatus === 'failed'
+                            ? <p className='loading-failed'>
+                                Something went wrong, please review your server connection!
+                            </p>
+                            : null
                 }
             </div>
             <div className="ruler">

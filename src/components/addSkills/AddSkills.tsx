@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react'
 import './AddSkills.scss'
 import Button from '../button/Button'
 import { Skill } from '../skills/Skills';
-import { useDispatch } from 'react-redux';
-import { addSkill } from '../../redux/features/skillsSlice';
+import { useAppDispatch } from '../../redux/store';
+import { fetchSkillsData, sendSkillsData } from '../../redux/features/skillsSlice';
+// import { addSkill } from '../../redux/features/skillsSlice';
 
 const AddSkills: React.FC = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const [skill, setSkill] = useState<Skill>(
         { skillName: '', skillRange: '', }
@@ -71,7 +72,9 @@ const AddSkills: React.FC = () => {
 
     const submitHandler = (ev: React.FormEvent) => {
         ev.preventDefault();
-        dispatch(addSkill(skill));
+        dispatch(sendSkillsData(skill));
+        dispatch(fetchSkillsData());
+     
         setSkill({ skillName: '', skillRange: '', });
         setErrorIsDisplayed(false);
         setIsDisabled(true)
