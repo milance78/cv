@@ -4,9 +4,15 @@ import Button from '../button/Button'
 import { Skill } from '../skills/Skills';
 import { useAppDispatch } from '../../redux/store';
 import { fetchSkillsData, sendSkillsData } from '../../redux/features/skillsSlice';
-// import { addSkill } from '../../redux/features/skillsSlice';
 
-const AddSkills: React.FC = () => {
+interface IAddSkills {
+    setShouldBeCleared: React.Dispatch<React.SetStateAction<boolean>>;
+    setClearLinkIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const AddSkills: React.FC<IAddSkills> = (
+    { setShouldBeCleared, setClearLinkIsVisible }
+) => {
 
     const dispatch = useAppDispatch();
 
@@ -60,13 +66,13 @@ const AddSkills: React.FC = () => {
             && setRangeError(errors.rangeUnder10);
     }, [errorIsDisplayed, errors.nameEmpty, errors.rangeEmpty, errors.rangeNaN, errors.rangeOver100, errors.rangeUnder10, skill])
 
-    useEffect(()=>{       
-        Boolean(nameError) 
-        || Boolean(rangeError)
-        || skill.skillName === ''
-        || skill.skillRange === ''
-        ? setIsDisabled(true)
-        : setIsDisabled(false)
+    useEffect(() => {
+        Boolean(nameError)
+            || Boolean(rangeError)
+            || skill.skillName === ''
+            || skill.skillRange === ''
+            ? setIsDisabled(true)
+            : setIsDisabled(false)
 
     }, [rangeError, nameError, skill.skillName, skill.skillRange])
 
@@ -74,7 +80,8 @@ const AddSkills: React.FC = () => {
         ev.preventDefault();
         dispatch(sendSkillsData(skill));
         dispatch(fetchSkillsData());
-     
+        setShouldBeCleared(false);
+        setClearLinkIsVisible(false);
         setSkill({ skillName: '', skillRange: '', });
         setErrorIsDisplayed(false);
         setIsDisabled(true)

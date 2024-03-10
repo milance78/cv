@@ -15,7 +15,8 @@
         width: 9px;
     }
     .skills-container {
-
+        position: relative;
+        min-height: 30px;
         div {
             color: white;
             background-color: var(--accents);
@@ -24,6 +25,27 @@
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;    
+        }
+        .loading-failed {
+            width: fit-content;
+            margin: 60px auto;
+            color: red;
+
+        }
+        .clear-all {
+            color: coral;
+            position: absolute;
+            bottom: -15px;
+            right: 10px;
+            transition: .3s ease;
+            visibility: hidden;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .visible {
+            display: absolute;
+            visibility: visible;
+            opacity: 1;
         }
 
     }

@@ -10,8 +10,8 @@ interface SkillState {
 
 const initialState: SkillState = {
     skillsArray: [],
-    getStatus: 'fulfilled',
-    postStatus: 'fulfilled',
+    getStatus: 'complete',
+    postStatus: 'complete',
 }
 
 export const fetchSkillsData = createAsyncThunk(
@@ -49,13 +49,8 @@ export const skillsSlice = createSlice({
     name: 'skills',
     initialState: initialState,
     reducers: {
+        reset: () => initialState
         // since all necessary actions in this case are asynchroneus, this object is empty. In case that there are also some synchroneus actions, this object would be needed for storing them
-        // addSkill: (state, action) => {
-        //     state.skillsArray = [
-        //         ...state.skillsArray,
-        //         action.payload,
-        //     ]
-        // }
     },
     extraReducers: (builder) => {
         builder
@@ -89,5 +84,5 @@ export const skillsSlice = createSlice({
     }
 });
 
-// export const { addSkill } = skillsSlice.actions;
+export const { reset } = skillsSlice.actions;
 export default skillsSlice.reducer;
