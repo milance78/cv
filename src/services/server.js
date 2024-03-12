@@ -3,17 +3,15 @@ import { createServer } from 'miragejs';
 
 const updateStorage = (data) => {
     localStorage.setItem(
-        'brr', JSON.stringify(data)
+        'skillsData', JSON.stringify(data)
     );
 };
 
 export const getStorageData = () => {
     return JSON.parse(
-        localStorage.getItem('brr')
+        localStorage.getItem('skillsData')
     );
 }
- 
-
 
 createServer(
     {

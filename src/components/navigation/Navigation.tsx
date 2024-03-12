@@ -25,7 +25,7 @@ const Navigation = () => {
         <FontAwesomeIcon icon={faPen} />
         <p>Experience</p>
       </a>
-      <a href="#section-4" onClick={()=> scrollTo(500, 0) }>
+      <a href="#section-4">
         <FontAwesomeIcon icon={faGem} />
         <p>Skills</p>
       </a>

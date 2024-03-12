@@ -82,7 +82,7 @@ const AddSkills: React.FC<IAddSkills> = (
         dispatch(fetchSkillsData());
         setShouldBeCleared(false);
         setClearLinkIsVisible(false);
-        setSkill({ skillName: '', skillRange: '', });
+        setSkill({ skillName: '', skillRange: ''});
         setErrorIsDisplayed(false);
         setIsDisabled(true)
     }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Skills.scss';
 import AddSkills from '../addSkills/AddSkills';
 import { useAppSelector, useAppDispatch } from '../../redux/store';
-import { fetchSkillsData, reset, sendSkillsData } from '../../redux/features/skillsSlice';
+import { fetchSkillsData, reset } from '../../redux/features/skillsSlice';
 import Button from '../button/Button';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

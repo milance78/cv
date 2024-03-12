@@ -1,7 +1,12 @@
 import React from 'react'
 import './PortfolioItem.scss'
 import { useState } from 'react';
-import { Element } from '../../data/data';
+
+interface Element {
+    photo: string;
+    title: string;
+    text: string;
+}
 
 interface IProps {
     element: Element, 

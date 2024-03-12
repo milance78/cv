@@ -33,6 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -55,6 +56,28 @@
   },
   "devDependencies": {
     "@types/react-redux": "^7.1.33",
+    "husky": "^9.0.11",
     "miragejs": "^0.1.48"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!/node_modules/",
+      "!src/index.tsx",
+      "!src/services/server.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 40,
+        "functions": 40,
+        "lines": 40,
+        "statements": 40
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    } 
   }
 }
