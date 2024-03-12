@@ -76,7 +76,7 @@
       }
     }
   },
-  "husky":{
+  "husky": {
     "hooks": {
       "pre-push": "npm test"
     }
