@@ -75,5 +75,10 @@
         "statements": 40
       }
     }
+  },
+  "husky":{
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
