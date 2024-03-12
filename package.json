@@ -34,7 +34,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "test:coverage": "npm test -- --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -73,11 +74,6 @@
         "lines": 40,
         "statements": 40
       }
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test" 
     }
   }
 }
