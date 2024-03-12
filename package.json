@@ -17,7 +17,6 @@
     "@types/node": "^16.18.82",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
-    "husky": "^4.3.0",
     "isotope-layout": "^3.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -36,8 +35,7 @@
     "test": "react-scripts test --watchAll=false",
     "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
-    "prepare": "husky",
-    "postinstall": "husky install"
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -75,12 +73,6 @@
         "lines": 40,
         "statements": 40
       }
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm test",
-      "pre-commit": "npm test"
     }
   }
 }
