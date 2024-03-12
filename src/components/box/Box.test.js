@@ -15,3 +15,5 @@ const MockedBox = () => <Provider store={store}>
 test('component Address should render', () => {
     render(<MockedBox />);
 });
+
+console.log(123);
