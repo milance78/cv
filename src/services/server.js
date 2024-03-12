@@ -85,7 +85,6 @@ createServer(
                 }, { timing: 3000 });
             this.post("/api/skills", (schema, request) => {
                 !getStorageData() && updateStorage([]);
-               
                 let attrs = JSON.parse(request.requestBody);
                 updateStorage([...getStorageData(), attrs])
                
