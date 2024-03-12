@@ -36,7 +36,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "husky install"
   },
   "eslintConfig": {
     "extends": [
