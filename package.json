@@ -32,7 +32,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject"
   },
@@ -77,7 +77,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
-    } 
+      "pre-commit": "npm test" 
+    }
   }
 }
