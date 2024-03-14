@@ -15,6 +15,7 @@ const Button: React.FC<IButton> = ({ title, clickHandler, isDisabled, styling })
       className={isDisabled
         ? 'button button-disabled'
         : 'button'}
+      type='submit'
       onClick={clickHandler}
       disabled={isDisabled}
       style={styling}>
