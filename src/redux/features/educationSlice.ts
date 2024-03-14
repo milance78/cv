@@ -30,7 +30,9 @@ export const fetchEducationData = createAsyncThunk(
 export const educationSlice = createSlice({
     name: 'education',
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        // since all necessary actions in this case are asynchroneus, this object is empty. In case that there are also some synchroneus actions, this object would be needed for storing them
+    },
     extraReducers: (builder) => {
         builder
             .addCase(

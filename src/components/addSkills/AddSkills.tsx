@@ -29,7 +29,6 @@ const AddSkills: React.FC<IAddSkills> = (
     }
 
     const submitHandler = (values: FormObject, { resetForm }: any) => {
-        console.log(values);
         dispatch(sendSkillsData(values));
         dispatch(fetchSkillsData());
         setShouldBeCleared(false);
@@ -50,7 +49,7 @@ const AddSkills: React.FC<IAddSkills> = (
                     placeholder='Enter skill name'
                     id='skillName' />
                 <div className="error">
-                    <ErrorMessage name='skillName' component='span' className="error"/>
+                    <ErrorMessage name='skillName' component='div'/>
                 </div>
                 <label htmlFor='skillRange'>Skill range</label>
                 <Field name='skillRange'

@@ -50,7 +50,6 @@ export const skillsSlice = createSlice({
     initialState: initialState,
     reducers: {
         reset: () => initialState
-        // since all necessary actions in this case are asynchroneus, this object is empty. In case that there are also some synchroneus actions, this object would be needed for storing them
     },
     extraReducers: (builder) => {
         builder
@@ -61,7 +60,18 @@ export const skillsSlice = createSlice({
                 })
             .addCase(fetchSkillsData.fulfilled,
                 (state, action) => {
-                    state.skillsArray = action.payload;
+                    const unorderedSkills = action.payload;
+                    const orderedRange = unorderedSkills
+                        .map((el: any) => el.skillRange)
+                        .sort((a: number, b: number) => a - b)
+                        .reverse();
+                    const orderedSkills = orderedRange
+                        .map((el: any) => {
+                            const [a] = unorderedSkills
+                                .filter((skill: any) => skill.skillRange === el)
+                            return a
+                        });
+                    state.skillsArray = orderedSkills;
                     state.getStatus = 'complete';
                 })
             .addCase(fetchSkillsData.rejected,
