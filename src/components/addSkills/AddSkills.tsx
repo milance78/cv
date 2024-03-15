@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../redux/store';
 import { fetchSkillsData, sendSkillsData } from '../../redux/features/skillsSlice';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import skillsSchema from '../../formValidations/skillsValidation';
+import { Skill } from '../skills/Skills';
 
 interface IAddSkills {
     setShouldBeCleared: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,18 +18,13 @@ const AddSkills: React.FC<IAddSkills> = (
 
     const dispatch = useAppDispatch();
 
-    type FormObject = {
-        skillName: string,
-        skillRange: number | string,
-    }
-
     const initalValues =
     {
         skillName: '',
         skillRange: '',
     }
 
-    const submitHandler = (values: FormObject, { resetForm }: any) => {
+    const submitHandler = (values: Skill, { resetForm }: any) => {
         dispatch(sendSkillsData(values));
         dispatch(fetchSkillsData());
         setShouldBeCleared(false);

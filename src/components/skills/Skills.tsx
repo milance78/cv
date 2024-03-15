@@ -12,7 +12,7 @@ import { getStorageData } from '../../services/server';
 
 export interface Skill {
   skillName: string,
-  skillRange: string | number,
+  skillRange: number | string,
   id?: string,
 }
 

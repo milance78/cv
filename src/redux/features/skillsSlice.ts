@@ -60,18 +60,21 @@ export const skillsSlice = createSlice({
                 })
             .addCase(fetchSkillsData.fulfilled,
                 (state, action) => {
-                    const unorderedSkills = action.payload;
-                    const orderedRange = unorderedSkills
-                        .map((el: any) => el.skillRange)
-                        .sort((a: number, b: number) => a - b)
+                    // bug!!!
+                    // const orderedRange = unorderedSkills
+                    //     .map((el: any) => el.skillRange)
+                    //     .sort((a: number, b: number) => a - b)
+                    //     .reverse();
+                    // const orderedSkills = orderedRange
+                    //     .map((el: any) => {
+                    //         const [a] = unorderedSkills
+                    //             .filter((skill: any) => skill.skillRange === el)
+                    //         return a
+                    //     });
+                    state.skillsArray = action.payload && action.payload
+                        .sort((a: Skill, b: Skill) =>
+                            Number(a.skillRange) - Number(b.skillRange))
                         .reverse();
-                    const orderedSkills = orderedRange
-                        .map((el: any) => {
-                            const [a] = unorderedSkills
-                                .filter((skill: any) => skill.skillRange === el)
-                            return a
-                        });
-                    state.skillsArray = orderedSkills;
                     state.getStatus = 'complete';
                 })
             .addCase(fetchSkillsData.rejected,
