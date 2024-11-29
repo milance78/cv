@@ -1,5 +1,4 @@
 {
-  "homepage": "https://milance78.github.io/cv/",
   "name": "cv",
   "version": "0.1.0",
   "private": true,
@@ -62,6 +61,7 @@
   },
   "devDependencies": {
     "@types/react-redux": "^7.1.33",
+    "gh-pages": "^6.2.0",
     "miragejs": "^0.1.48"
   },
   "jest": {
