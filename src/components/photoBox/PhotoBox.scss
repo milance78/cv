@@ -1,10 +1,18 @@
 .photo-box {
     width: 500px;
-    height: 369px;
+    height: 469px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    color: var(--light-grey);
+
+    img {
+        height: 200px;
+        width: 200px;
+        border: var(--light-grey) solid;
+        border-radius: 50%;
+    }
 
     h1 {
         font-weight: 700;

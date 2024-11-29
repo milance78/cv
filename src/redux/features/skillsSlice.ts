@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import '../../services/server';
 import { Skill } from "../../components/skills/Skills";
 
+
 interface SkillState {
     skillsArray: Skill[];
     getStatus: string,

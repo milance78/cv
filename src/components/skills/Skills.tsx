@@ -29,7 +29,7 @@ const Skills = () => {
   }, [dispatch])
 
   return (
-    <div className='skills' id='section-4'>
+    <div className='skills' id='section-5'>
       <h1>Skills</h1>
       <Button
         title={
@@ -107,7 +107,7 @@ const Skills = () => {
           <div className="line"></div>
           <div className="skillLevels">
             <p>Beginner</p>
-            <p style={{ marginRight: '3%' }}>Proficient</p>
+            <p style={{ marginRight: '3%' }}>Advanced</p>
             <p style={{ marginRight: '2%' }}>Expert</p>
             <p>Master</p>
           </div>

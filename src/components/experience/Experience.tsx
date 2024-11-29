@@ -1,13 +1,15 @@
-import React from 'react'
-import './Expertise.scss'
-import { expertiseData } from '../../data/data'
+import './Experience.scss'
+import staticData from '../../data/staticData'
 
-const Expertise = () => {
+const Experience = () => {
+
+    const { experienceData } = staticData;
+
     return (
-        <section className='expertise' id='section-3'>
+        <section className='experience' id='section-4'>
             <h1>Experience</h1>
-            <div className="expertise-container">
-                {expertiseData.map(
+            <div className="experience-container">
+                {experienceData.map(
                     (el, i) => <article key={i}>
                         <section className="left">
                             <h3>{el.info.company}</h3>
@@ -25,4 +27,4 @@ const Expertise = () => {
     )
 }
 
-export default Expertise
+export default Experience

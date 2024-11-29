@@ -4,7 +4,7 @@ import { PanelVisibility } from '../../pages/inner/Inner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import profilePic from '../../assets/img/avatar1.png';
+import profilePic from '../../assets/img/Milan.png';
 import Navigation from '../navigation/Navigation';
 import Button from '../button/Button';
 import { Link } from 'react-router-dom';
@@ -35,7 +35,7 @@ const Panel: React.FC<IProps> = ({ panelVisibility, setPanelVisibility }) => {
         <FontAwesomeIcon icon={faBars} color='white' />
       </div>
       <img src={profilePic} alt="profile" />
-      <h1>John Doe</h1>
+      <h1>Milan Pavlović</h1>
       <Navigation />
       <Link to='/'>
         <Button

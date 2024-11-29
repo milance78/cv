@@ -11,27 +11,26 @@ import { Link } from 'react-router-dom';
 const Address = () => {
 
   return (
-    <div className='contact-details' id='section-6'>
-
-      <h1>Contacts</h1>
+    <div className='contact-details' id='section-2'>
+      <h1>Contact</h1>
       <ul>
         <li>
-          <Link to="tel:500 342 242">
+          <Link to="tel:+381 65 8888 530">
             <FontAwesomeIcon
               icon={faPhone}
               className='icon' />
             <div className="contact-data">
-              <h5>500 342 242</h5>
+              <h5>+381 65 8888 530</h5>
             </div>
           </Link>
         </li>
         <li>
-          <Link to="mailto:test@gmail.com">
+          <Link to="mailto:milance78@yahoo.com">
             <FontAwesomeIcon
               icon={faEnvelope}
               className='icon' />
             <div className="contact-data">
-              <h5>office@kamsolutions.pl</h5>
+              <h5>milance78@yahoo.com</h5>
             </div>
           </Link>
         </li>

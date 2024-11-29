@@ -2,9 +2,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import '../../services/server';
 
 export interface Education {
-    date: string;
+    year: string;
     title: string;
     description: string;
+    isCourse: false
 }
 interface EducationState {
     educationArray: Education[];

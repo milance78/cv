@@ -1,14 +1,14 @@
-.timeline {
+.education {
     margin-top: 60px;
 
     h1 {
         margin-bottom: 60px;
     }
 
-    .timeline-container {
+    .education-container {
         min-height: 30vh;
         max-height: 80vh;
-        overflow: scroll;
+        // overflow: scroll;
 
         article {
             display: flex;
@@ -56,6 +56,9 @@
                     font-weight: 700;
                     font-size: 16px;
                     background: #EEEEEE;
+                }
+                .course-font-color {
+                    color: var(--accents);
                 }
             }
         }

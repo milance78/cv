@@ -1,7 +1,7 @@
 .panel {
     padding: 20px 0;
     margin-right: 30px;
-    background: var(--primary);
+    background: linear-gradient(rgba(34, 41, 53, 0.7), rgba(34, 41, 53, 0.7)), url(../../assets/img/tree-tops.jpg);
     height: 100%;
     position: fixed;
     transition: .4s ease;
@@ -31,6 +31,8 @@
         width: 100px;
         height: 100px;
         overflow: hidden;
+        border: rgb(160, 160, 160) solid;
+        border-radius: 50%;
     }
 
     h1 {

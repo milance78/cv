@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './Timeline.scss';
+import './Education.scss';
 import Info from '../info/Info';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +7,7 @@ import '../../services/server'
 import { fetchEducationData } from '../../redux/features/educationSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 
-const TimeLine = () => {
+const Education = () => {
 
   const dispatch = useAppDispatch();
   const educationData = useAppSelector((state) => state.education.educationArray);
@@ -18,19 +18,19 @@ const TimeLine = () => {
   }, [dispatch]);
 
   return (
-    <section className='timeline' id='section-2'>
-      <h1>Education</h1>
+    <section className='education' id='section-3'>
+      <h1>Education and courses</h1>
       {
         loadingStatus === 'complete'
-          ? <div className="timeline-container">
+          ? <div className="education-container">
             {educationData.map((el, i) => <article key={i}>
               <section className='left'>
-                <h3>{el.date}</h3>
+                <h3>{el.year}</h3>
                 <div className='vertical-line'></div>
               </section>
               <section className='right'>
                 <div className="triangle"></div>
-                <h3>{el.title}</h3>
+                <h3 className={el.isCourse ? 'course-font-color' : ''}>{el.title}</h3>
                 <Info description={el.description} />
               </section>
             </article>)}
@@ -54,4 +54,4 @@ const TimeLine = () => {
   )
 }
 
-export default TimeLine
+export default Education

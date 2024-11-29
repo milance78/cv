@@ -8,7 +8,7 @@ import { faGem } from '@fortawesome/free-solid-svg-icons';
 import { faSuitcase } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
-import { faComment } from '@fortawesome/free-solid-svg-icons';
+// import { faComment } from '@fortawesome/free-solid-svg-icons';
 
 const Navigation = () => {
   return (
@@ -18,29 +18,29 @@ const Navigation = () => {
         <p>About me</p>
       </a>
       <a href="#section-2">
+        <FontAwesomeIcon icon={faLocationArrow} />
+        <p>Contact</p>
+      </a>
+      <a href="#section-3">
         <FontAwesomeIcon icon={faGraduationCap} />
         <p>Education</p>
       </a>
-      <a href="#section-3">
+      <a href="#section-4">
         <FontAwesomeIcon icon={faPen} />
         <p>Experience</p>
       </a>
-      <a href="#section-4">
+      <a href="#section-5">
         <FontAwesomeIcon icon={faGem} />
         <p>Skills</p>
       </a>
-      <a href="#section-5">
+      <a href="#section-6">
         <FontAwesomeIcon icon={faSuitcase} />
         <p>Portfolio</p>
       </a>
-      <a href="#section-6">
-        <FontAwesomeIcon icon={faLocationArrow} />
-        <p>Contacts</p>
-      </a>
-      <a href="#section-7">
+      {/* <a href="#section-7">
         <FontAwesomeIcon icon={faComment} />
         <p>Feedback</p>
-      </a>
+      </a> */}
 
     </div>
   )
