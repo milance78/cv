@@ -5,7 +5,7 @@ import { useAppDispatch } from '../../redux/store';
 import { fetchSkillsData, sendSkillsData } from '../../redux/features/skillsSlice';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import skillsSchema from '../../formValidations/skillsValidation';
-import { Skill } from '../skills/Skills';
+import { Skill } from '../sections/skills/Skills';
 
 interface IAddSkills {
     setShouldBeCleared: React.Dispatch<React.SetStateAction<boolean>>;

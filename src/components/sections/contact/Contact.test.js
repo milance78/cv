@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import Address from './Address';
+import Address from './Contact';
 
 const MockedAddress = () => <BrowserRouter>
     <Address />

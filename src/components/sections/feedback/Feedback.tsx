@@ -1,7 +1,7 @@
 import './Feedback.scss'
-import staticData from '../../data/staticData'
-import Info from '../info/Info'
-import Button from '../button/Button';
+import staticData from '../../../data/staticData';
+import Info from '../../info/Info'
+import Button from '../../button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 

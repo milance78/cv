@@ -8,35 +8,60 @@ import { faGem } from '@fortawesome/free-solid-svg-icons';
 import { faSuitcase } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { ElementsContext } from '../../contexts/navigateContext';
+import { useContext } from 'react';
 // import { faComment } from '@fortawesome/free-solid-svg-icons';
+export interface Elements {
+  aboutMeElement: HTMLDivElement;
+  educationElement: HTMLDivElement;
+  experienceElement: HTMLDivElement;
+}
 
 const Navigation = () => {
+
+  const { 
+    elements: {
+      educationElement, 
+      experienceElement,
+      aboutMeElement,
+      contactElement,
+      skillsElement,
+      portfolioElement,
+    } 
+  } = useContext(ElementsContext); // deep destructuring 
+
+  const scrollTo = (element: HTMLDivElement) => {
+    element.scrollIntoView({ 
+      behavior: 'smooth' 
+    })
+  }
+
   return (
     <div className='navigation'>
-      <a href='#section-1'>
+      <div onClick={() => scrollTo(aboutMeElement)}>
         <FontAwesomeIcon icon={faUser} />
         <p>About me</p>
-      </a>
-      <a href="#section-2">
+      </div>
+      <div onClick={() => scrollTo(contactElement)}>
         <FontAwesomeIcon icon={faLocationArrow} />
         <p>Contact</p>
-      </a>
-      <a href="#section-3">
+      </div>
+      <div onClick={() => scrollTo(educationElement)}>
         <FontAwesomeIcon icon={faGraduationCap} />
         <p>Education</p>
-      </a>
-      <a href="#section-4">
+      </div>
+      <div onClick={() => scrollTo(experienceElement)}>
         <FontAwesomeIcon icon={faPen} />
         <p>Experience</p>
-      </a>
-      <a href="#section-5">
+      </div>
+      <div onClick={() => scrollTo(skillsElement)}>
         <FontAwesomeIcon icon={faGem} />
         <p>Skills</p>
-      </a>
-      <a href="#section-6">
+      </div>
+      <div onClick={() => scrollTo(portfolioElement)}>
         <FontAwesomeIcon icon={faSuitcase} />
         <p>Portfolio</p>
-      </a>
+      </div>
       {/* <a href="#section-7">
         <FontAwesomeIcon icon={faComment} />
         <p>Feedback</p>

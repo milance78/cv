@@ -8,7 +8,9 @@ export interface PanelVisibility {
   panelClass: string;
 }
 
+
 const Inner = () => {
+
   const [panelVisibility, setPanelVisibility] = useState(
     { boxClass: 'box', panelClass: 'panel' }
   );
@@ -18,7 +20,7 @@ const Inner = () => {
       <Panel
         panelVisibility={panelVisibility}
         setPanelVisibility={setPanelVisibility} />
-      <Box panelVisibility={panelVisibility} />
+      <Box panelVisibility={panelVisibility}/>
     </div>
   )
 }

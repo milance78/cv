@@ -1,5 +1,5 @@
-import React from 'react'
-import './Address.scss'
+import React, { useContext, useEffect, useRef } from 'react'
+import './Contact.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -7,11 +7,26 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faSquareXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faSkype } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import { ElementsContext } from '../../../contexts/navigateContext';
+import { Elements } from '../../navigation/Navigation';
 
-const Address = () => {
+const Contact = () => {
+
+  const {setElements} = useContext(ElementsContext);
+  const contactRef = useRef(null);
+
+  useEffect(()=>{
+    setElements(
+      (prev: Elements) => ({
+          ...prev,
+          contactElement: contactRef.current
+        })
+  )
+  }, [setElements]);
 
   return (
-    <div className='contact-details' id='section-2'>
+    <section className='contact-details'
+    ref={contactRef}>
       <h1>Contact</h1>
       <ul>
         <li>
@@ -70,8 +85,8 @@ const Address = () => {
           </Link>
         </li>
       </ul>
-    </div >
+    </section >
   )
 }
 
-export default Address
+export default Contact

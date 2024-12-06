@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import '../../services/server';
-import { Skill } from "../../components/skills/Skills";
+import { Skill } from "../../components/sections/skills/Skills";
 
 
 interface SkillState {

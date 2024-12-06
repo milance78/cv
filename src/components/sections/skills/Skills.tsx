@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import './Skills.scss';
-import AddSkills from '../addSkills/AddSkills';
-import { useAppSelector, useAppDispatch } from '../../redux/store';
-import { fetchSkillsData, reset } from '../../redux/features/skillsSlice';
-import Button from '../button/Button';
+import AddSkills from '../../addSkills/AddSkills';
+import { useAppSelector, useAppDispatch } from '../../../redux/store';
+import { fetchSkillsData, reset } from '../../../redux/features/skillsSlice';
+import Button from '../../button/Button';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
-import { getStorageData } from '../../services/server';
+import { getStorageData } from '../../../services/server';
+import { ElementsContext } from '../../../contexts/navigateContext';
+import { Elements } from '../../navigation/Navigation';
 
 
 export interface Skill {
@@ -23,13 +25,25 @@ const Skills = () => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [clearLinkIsVisible, setClearLinkIsVisible] = useState(false);
   const [shouldBeCleared, setShouldBeCleared] = useState(false);
+  const { setElements } = useContext(ElementsContext);
+  const skillsRef = useRef(null);
 
   useEffect(() => {
     dispatch(fetchSkillsData());
-  }, [dispatch])
+  }, [dispatch]);
+
+  useEffect(() => {
+    setElements(
+      (prev: Elements) => ({
+        ...prev,
+        skillsElement: skillsRef.current
+      })
+    )
+  }, [setElements])
 
   return (
-    <div className='skills' id='section-5'>
+    <section className='skills'
+      ref={skillsRef}>
       <h1>Skills</h1>
       <Button
         title={
@@ -113,7 +127,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </div >
+    </section >
   )
 }
 
