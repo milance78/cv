@@ -1,6 +1,7 @@
 {
-  "name": "cv-app",
+  "name": "cv",
   "version": "0.1.0",
+  "homepage": "http://milance78.github.io/cv",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
